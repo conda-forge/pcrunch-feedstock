@@ -13,23 +13,25 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -v
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
     - fatpack
     - numpy
     - pandas
-    - python >=3.9
+    - python >={{ python_min }}
     - pyyaml
     - ruamel.yaml
     - scipy
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pCrunch
   #commands:
