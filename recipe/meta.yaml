@@ -9,11 +9,11 @@ source:
   url: https://github.com/nrel/pCrunch/archive/v{{ version }}.tar.gz
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pCrunch-{{ version }}.tar.gz
   sha256: 6c4a42de8f1a3c1459b4af3b3d3041868efeb1752a3ccb15afeff2b2c4ab53ca
-  
+
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -v
+  number: 1
 
 requirements:
   host:
@@ -31,6 +31,8 @@ requirements:
     - scipy
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pCrunch
   commands:
@@ -43,8 +45,8 @@ about:
   home: https://github.com/nrel/pcrunch
   summary: "IO and Post Processing Interface for OpenFAST Results."
   description: |
-      Python utilities and scripts for ultimate load tables and fatigue damage
-      equivalent life (DEL) calculation for OpenFAST aeroelastic time-series simulations
+    Python utilities and scripts for ultimate load tables and fatigue damage
+    equivalent life (DEL) calculation for OpenFAST aeroelastic time-series simulations
   license: Apache-2.0
   license_file: LICENSE.txt
   dev_url: https://github.com/nrel/pcrunch
