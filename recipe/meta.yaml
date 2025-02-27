@@ -33,10 +33,13 @@ requirements:
 test:
   imports:
     - pCrunch
+  source_files:
+    - pcrunch
+    - examples
   commands:
-    - pytest pCrunch
+    - cd examples
+    - python example_casematrix.py
   requires:
-    - pytest
     - python {{ python_min }}
 
 about:
