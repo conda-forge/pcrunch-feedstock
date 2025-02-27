@@ -36,7 +36,7 @@ test:
   imports:
     - pCrunch
   source_files:
-    - pcrunch
+    - pCrunch
     - examples
   commands:
     - cd examples
