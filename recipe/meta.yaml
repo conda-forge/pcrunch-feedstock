@@ -1,5 +1,5 @@
 {% set name = "pCrunch" %}
-{% set version = "1.1.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://github.com/nrel/pCrunch/archive/v{{ version }}.tar.gz
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pCrunch-{{ version }}.tar.gz
-  sha256: e77f4f6152972eb8d035dcaf3864ba5b737cc9cf371441d8e4bf8e6a75941d96
+  sha256: 6c4a42de8f1a3c1459b4af3b3d3041868efeb1752a3ccb15afeff2b2c4ab53ca
 
 build:
   noarch: python
@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - fatpack
+    - numexpr
     - numpy
     - pandas
     - python >={{ python_min }}
@@ -34,10 +35,14 @@ test:
     - python {{ python_min }}
   imports:
     - pCrunch
-  #commands:
-  #  - pytest pCrunch
-  #requires:
-  #  - pytest
+  source_files:
+    - pCrunch
+    - examples
+  commands:
+    - cd examples
+    - python example_casematrix.py
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nrel/pcrunch
