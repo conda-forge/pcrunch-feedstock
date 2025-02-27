@@ -1,5 +1,5 @@
 {% set name = "pCrunch" %}
-{% set version = "1.0.3" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://github.com/nrel/pCrunch/archive/v{{ version }}.tar.gz
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pCrunch-{{ version }}.tar.gz
-  sha256: b5da4e2abb82b4251fc0bab61d43821f47262997a169a065545f366745cdace8
+  sha256: 6c4a42de8f1a3c1459b4af3b3d3041868efeb1752a3ccb15afeff2b2c4ab53ca
   
 build:
   noarch: python
@@ -17,24 +17,27 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
     - fatpack
+    - numexpr
     - numpy
     - pandas
-    - python >=3.9
+    - python >={{ python_min }}
     - pyyaml
+    - ruamel.yaml
     - scipy
 
 test:
   imports:
     - pCrunch
-  #commands:
-  #  - pytest pCrunch
-  #requires:
-  #  - pytest
+  commands:
+    - pytest pCrunch
+  requires:
+    - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nrel/pcrunch
