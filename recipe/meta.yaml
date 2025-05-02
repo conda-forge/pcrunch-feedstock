@@ -1,5 +1,5 @@
 {% set name = "pCrunch" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://github.com/nrel/pCrunch/archive/v{{ version }}.tar.gz
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pCrunch-{{ version }}.tar.gz
-  sha256: 55a417bd4c17fd8489cc9037686290990d8e37a0c4631c0e587bda53cb8c59f0
+  sha256: 84332ff296eeb2090a03fbbb3a47c50a6e607e539a266a86f124db3ed14b95d4
 
 build:
   noarch: python
