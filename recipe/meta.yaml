@@ -1,5 +1,5 @@
 {% set name = "pCrunch" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   url: https://github.com/nrel/pCrunch/archive/v{{ version }}.tar.gz
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pCrunch-{{ version }}.tar.gz
-  sha256: 84332ff296eeb2090a03fbbb3a47c50a6e607e539a266a86f124db3ed14b95d4
+  sha256: 83335d4fc1f5ab1e34a5337294b04157d68cdb4968c014c47c7ae408d42069b7
 
 build:
   noarch: python
@@ -41,8 +41,6 @@ test:
   commands:
     - cd examples
     - python example_casematrix.py
-  requires:
-    - python {{ python_min }}
 
 about:
   home: https://github.com/nrel/pcrunch
