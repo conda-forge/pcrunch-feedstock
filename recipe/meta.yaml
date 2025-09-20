@@ -41,8 +41,6 @@ test:
   commands:
     - cd examples
     - python example_casematrix.py
-  requires:
-    - python {{ python_min }}
 
 about:
   home: https://github.com/nrel/pcrunch
