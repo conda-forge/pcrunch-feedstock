@@ -14,16 +14,14 @@ Development: https://github.com/nrel/pcrunch
 Python utilities and scripts for ultimate load tables and fatigue damage
 equivalent life (DEL) calculation for OpenFAST aeroelastic time-series simulations
 
-
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=19406&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pcrunch-feedstock?branchName=main">
-      </a>
+      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
     </td>
   </tr>
 </table>
